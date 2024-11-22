@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-md p-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo Section -->
+            <div class="flex items-center space-x-2">
+                <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube Home">
+                    <img src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" alt="YouTube Logo" class="h-6">
+                </a>
+            </div>
+            <!-- Search Bar -->
+            <div class="flex items-center w-1/2">
+                <input type="text" placeholder="Search" class="w-full p-2 border border-gray-300 rounded-l-lg focus:outline-none"
+                       aria-label="Search YouTube">
+                <button class="bg-gray-100 px-4 py-2 border border-gray-300 rounded-r-lg" aria-label="Search">
+                    🔍
+                </button>
+            </div>
+            <!-- User Actions -->
+            <div class="flex space-x-4 items-center">
+                <button class="p-2 hover:bg-gray-200 rounded-full" aria-label="Upload Video">
+                    📹
+                </button>
+                <button class="p-2 hover:bg-gray-200 rounded-full" aria-label="Notifications">
+                    🔔
+                </button>
+                <img src="roy.png" alt="User Avatar" class="h-10 w-10 rounded-full" aria-label="User Profile">
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto mt-6 flex">
+        <!-- Sidebar -->
+        <aside class="lg:w-1/4 w-1/2">
+            <ul class="space-y-4">
+                <li>
+                    <a href="https://www.youtube.com/@Royalistiq" target="_blank"
+                       class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-md cursor-pointer">
+                        <span>🏠</span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/feed/trending?bp=6gQJRkVleHBsb3Jl" target="_blank"
+                       class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-md cursor-pointer">
+                        <span>🔥</span>
+                        <span>Trending</span>
+                    </a>
+                </li>
+                <li>
+                    <button onclick="toggleFeddeYT()" id="subscriptions-btn"
+                            class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-md cursor-pointer"
+                            aria-expanded="false" aria-controls="fedde-yt-btn">
+                        <span>🎥</span>
+                        <span>Subscriptions</span>
+                    </button>
+                </li>
+                <li id="fedde-yt-btn" class="hidden">
+                    <a href="https://www.youtube.com/@Fxdde99" target="_blank"
+                       class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-md cursor-pointer">
+                        <img src="Screenshot-2024-11-20-115010.png" alt="Fedde YT" class="h-6 w-6 rounded-full">
+                        <span>fedde yt</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="lg:w-3/4 w-full ml-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <!-- Video Cards -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="royalistiq-is-gek.png" alt="HET DREAMTEAM IS TERUG MET EEN WIN! 🏆 - Fortnite Thumbnail"
+                    class="w-full h-32 object-cover">
+                <div class="p-4">
+                    <div class="flex space-x-4">
+                        <img src="roya.png" alt="Royalistiq Channel" class="h-10 w-10 rounded-full">
+                        <div>
+                            <h3 class="text-lg font-semibold">HET DREAMTEAM IS TERUG MET EEN WIN! 🏆 - Fortnite</h3>
+                            <p class="text-sm text-gray-500">Royalistiq</p>
+                            <p class="text-sm text-gray-500">45K views • 18 uur geleden</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Other Video Cards -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="royalistiq-strategy.png" alt="ONTHOUD DEZE STRATEGIE.. 2 Port-a-Forts op Fortnite Thumbnail"
+                    class="w-full h-32 object-cover">
+                <div class="p-4">
+                    <div class="flex space-x-4">
+                        <img src="roya.png" alt="Royalistiq Channel" class="h-10 w-10 rounded-full">
+                        <div>
+                            <h3 class="text-lg font-semibold">ONTHOUD DEZE STRATEGIE.. 2 Port-a-Forts op Fortnite</h3>
+                            <p class="text-sm text-gray-500">Royalistiq</p>
+                            <p class="text-sm text-gray-500">32K views • 1 dag geleden</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script>
+        function toggleFeddeYT() {
+            const feddeBtn = document.getElementById('fedde-yt-btn');
+            feddeBtn.classList.toggle('hidden');
+            const isExpanded = !feddeBtn.classList.contains('hidden');
+            document.getElementById('subscriptions-btn').setAttribute('aria-expanded', isExpanded);
+        }
+    </script>
+</body>
+
+</html>
